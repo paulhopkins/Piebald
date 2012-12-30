@@ -1,0 +1,18 @@
+# Add 79 and 15
+# Specify values and some text
+6 55553
+33 34 1
+22 13
+11 02
+00  0
+@ .. .
+ @. ..
+  !!!!
+ ?  # While there is still something to add
+ }}   Make space for one temp
+ {}} # and rearrange
+^ &  # Calculate XOR and AND
+  <  # Left shift the AND
+ {   # Put back into place
+ :   # End loop
+@     .
