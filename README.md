@@ -18,8 +18,8 @@ The instructions are:
 ,               Input character to cell
 .               Output character from cell
 @               Output integer from cell
-?               If cell is zero, jump to matching ?
-:               If cell is non-zero, jump to matching :
+?               If cell is zero, jump to matching :
+:               If cell is non-zero, jump to matching ?
 #               Everything after is a comment
 ```
 
