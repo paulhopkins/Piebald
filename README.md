@@ -112,6 +112,7 @@ Examples
 | [fizzbuzz.pie](examples/fizzbuzz.pie) | FizzBuzz from 1 to 100, using one-hot counters for the 3s and 5s |
 | [rule30.pie](examples/rule30.pie) | the Rule 30 cellular automaton on 96 cells: one generation is four simultaneous rows |
 | [reverse.pie](examples/reverse.pie) | prints its input backwards; slides along the tape, so it handles input of any length |
+| [coat.pie](examples/coat.pie) | a self-portrait: the source is a piebald coat, and running it prints the same coat |
 | [bench.pie](examples/bench.pie) | three nested 8-bit counters (16.6M increments), used as a benchmark |
 
 ### Piebald patterns
@@ -127,6 +128,27 @@ made of letters. The live code shows through the white areas as ticking.
 ```
 python tools/piebaldify.py examples/fizzbuzz.pie --seed 6 --height 80 -o coat.pie
 ```
+
+### The self-portrait
+
+[coat.pie](examples/coat.pie) needs no disguise. Every character in it is a
+live instruction, the dark patches in the source are made of the code that
+computes them, and it prints its own coat:
+
+```
+6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6. . . . .      @@@@@@@@@@@@@@@@
+.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6. . . .       @@@@@@@@@@@@@@@@
+6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.<. . . .      @@@@@@@@@@@@@@@@@
+              source                               output
+```
+
+Each pixel prints as `@` (64) or a space (32). The two differ by a single
+shift, so each instruction is simply the change from one line to the next:
+`<` turns white into dark, `>` turns dark into white, and `6` keeps dark dark.
+Each pixel owns two wires that take turns: one builds the next line while the
+other prints the current one. That weaves the print instructions `.` through
+the picture instead of giving them rows of their own. Make a new one with
+`python tools/selfportrait.py --seed 3 -o mycoat.pie`.
 
 Design notes
 ------------

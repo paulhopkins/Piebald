@@ -74,11 +74,11 @@ class Noise:
         return total / norm
 
 
-def coat(width, height, coverage, rng):
-    """A boolean mask: True where the coat is dark."""
+def coat(width, height, coverage, rng, aspect=2.0):
+    """A boolean mask: True where the coat is dark.  `aspect` is pixel height / width."""
     # Characters are about twice as tall as they are wide, so measure
     # distances in "square" units: y counts double.
-    W, H = width, height * 2.0
+    W, H = width, height * aspect
     blobs = []
     for _ in range(rng.randint(7, 12)):
         r = rng.uniform(0.07, 0.20) * (W + H) / 2
@@ -88,7 +88,7 @@ def coat(width, height, coverage, rng):
     noise = Noise(rng)
     field = []
     for y in range(height):
-        Y = y * 2.0
+        Y = y * aspect
         row = []
         for x in range(width):
             v = 0.0
