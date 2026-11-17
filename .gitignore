@@ -20,3 +20,4 @@
 /piebald
 *.pdb
 tests/tmp/
+__pycache__/
