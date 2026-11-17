@@ -9,10 +9,10 @@
  @. ..
   !!!!
  ?  # While there is still something to add
- }}   Make space for one temp
- {}} # and rearrange
+ \\   Make space for one temp
+ /\\ # and rearrange
 ^ &  # Calculate XOR and AND
   <  # Left shift the AND
- {   # Put back into place
+ /   # Put back into place
  :   # End loop
 @     .

@@ -1,0 +1,8 @@
+# Two loops nested in the same column.  The original interpreter could not match these.
+1
+?
+?
+>
+@
+:
+:

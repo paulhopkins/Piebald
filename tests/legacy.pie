@@ -1,0 +1,7 @@
+# The 2012 spellings { and } still work: this is tests/swap.pie written with them.
+66
+01
+{}
+..
+}
+@

@@ -1,9 +1,10 @@
-#Set out the character codes
-6666656666653 
+# Set out the character codes, one column per character.
+# Each digit n sets bit n of the cell in its column.
+6666656666653
 35555 4555501
- 2333 23432  
- 0222 1212   
-    1 01     
+ 2333 23432
+ 0222 1212
+    1 01
     0  0
-#Output to the screen
-................
+# Output to the screen
+.............

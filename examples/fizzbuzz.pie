@@ -1,0 +1,50 @@
+# FizzBuzz from 1 to 100.
+#
+# Wires (columns):
+#   0 n            the counter            11-14 "Fizz"
+#   1 carry        for n += 1             15-18 "Buzz"
+#   2 T            n xor 100 (loop test)  19    newline
+#   3 scratch / the constant 100
+#   4 P            1 = print n as a number
+#   5 f, 6 f&8, 7 constant 8      f is a one-hot 3-step counter: 1 2 4 8
+#   8 g, 9 g&32, 10 constant 32   g is a one-hot 5-step counter
+#
+#           1111111111
+# 01234567890123456789
+  0  0 30 5666666663
+           255515551
+           1344 444
+            033 233
+             11 011
+# ---- main loop: while T != 0 ----
+ 0? 0<  <
+# n += 1 (ripple-carry adder: xor is the sum, and-shifted-left is the carry)
+ ?
+ \\
+ /\\
+^ &
+  <
+ /
+ :
+# test the counters
+      \  \
+      &  &
+# if f == 8: print Fizz, suppress the number, reset f
+      ?
+    !!!    ....
+     0:
+# if g == 32: print Buzz, suppress the number, reset g
+         ?
+    !   !!     ....
+        0:
+# if P: print n
+    ?
+@   !
+    :
+# newline, then T = n xor 100
+ \ !               .
+ !\6
+   5
+   2
+  ^
+  :

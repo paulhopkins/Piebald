@@ -1,0 +1,15 @@
+# Print the input backwards.
+#
+# Uses the slide instructions ( and ) to walk along the tape, storing one
+# character per cell, so it works for input of any length up to the tape size.
+# A finite-width program can do this only because it can slide.
+,    # read the first character
+?    # while it is not end of input (0)
+)    #   slide right onto a fresh cell
+,    #   read the next character into it
+:    # loop
+(    # step back onto the last character
+?    # while the cell is not the zero to the left of the first character
+.    #   print it
+(    #   slide left
+:    # loop

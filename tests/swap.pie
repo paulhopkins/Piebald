@@ -1,0 +1,8 @@
+# Rows are simultaneous: / and \ on adjacent wires swap them.
+66
+01
+/\
+..
+# \ on wire 0 reads the cell left of it, which wraps round the tape (and is 0)
+\
+@

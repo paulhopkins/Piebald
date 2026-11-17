@@ -1,6 +1,11 @@
-0
-?
-,
-.
-:
-!
+# Copy input to output until end of input (which reads as 0).
+# Column 0 holds the character just read, column 1 is a copy used for the "if".
+0            set column 0 non-zero so the loop is entered
+?            while column 0 is non-zero
+,            read a character into column 0
+ \           copy it into column 1
+ ?           if column 1 is non-zero
+ .           print it
+ !           clear column 1 so the if does not loop
+ :           end if
+:            end while

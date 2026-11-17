@@ -15,3 +15,8 @@
 *.exe
 *.out
 *.app
+
+# Build output
+/piebald
+*.pdb
+tests/tmp/

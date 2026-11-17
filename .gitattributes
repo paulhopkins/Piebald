@@ -1,0 +1,4 @@
+# Test fixtures are compared byte for byte: never convert their line endings.
+tests/*.expected -text
+tests/input.txt -text
+*.sh text eol=lf
