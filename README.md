@@ -123,6 +123,13 @@ lightweight spaceship and a glider cross the board, collide at generation 50,
 and burn until the wreckage settles into two blocks and a blinker. The board
 is 48 columns by 8 rows and wraps top to bottom.
 
+To watch it as an animation, pipe it through the player (the number is
+seconds per frame):
+
+```
+./piebald examples/life.pie | python tools/animate.py 0.08
+```
+
 It is built the way you would build Life in hardware:
 
 * **One wire per board column.** A byte holds 8 cells (bit *r* is row *r*), so
